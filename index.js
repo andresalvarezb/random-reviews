@@ -4,33 +4,18 @@ window.onload = () => {
     document.getElementById('footer').addEventListener('click', getQuote);
 }
 
+let index = 0;
 function getQuote(e) {
     if (e.target.id === 'btn') {
         getRandomQuote()
     } else if (e.target.id === 'right-arrow') {
-        getNextQuote()
+        if (index > data.length) { index = 0 }
+        card(data[index++])
     } else if (e.target.id === 'left-arrow') {
-        getPreviewQuote()
+        if (index > data.length) { index = 0 }
+        if (index < 0) { index = data.length - 1 }
+        card(data[index--])
     }
-}
-
-var i = 0
-function getNextQuote() {
-    if (i > data.length) {
-        i = 0
-    }
-    console.log(i);
-    card(data[i++])
-}
-function getPreviewQuote() {
-    if (i > data.length) {
-        i = 0
-    }
-    if (i < 0) {
-        i = data.length - 1
-    }
-    console.log(i);
-    card(data[i--])
 }
 
 function getRandomQuote() {
@@ -52,16 +37,14 @@ function card(object) {
     content.innerHTML = `
         <div class="wrapper">
             <figure class="img-container">
-            <div class="icon-quote">
-            <img src="assets/quote-left.svg" alt="quote icon">
-            </div>
-            <img class="img-author"
-            src=${image}
-            alt=${author}>
-            <figcaption class="author-container">
-            <cite>${author}</cite>
-            <p>${category}</p>
-            </figcaption>
+                <div class="icon-quote">
+                    <img src="assets/quote-left.svg" alt="quote icon">
+                </div>
+                <img class="img-author" src=${image} alt=${author}>
+                <figcaption class="author-container">
+                    <cite>${author}</cite>
+                    <p>${category}</p>
+                </figcaption>
             </figure>
             <p class="quote">${quote}</p>
         </div>
