@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#app {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main {
+    /* margin: auto; */
+    width: 70%;
+    text-align: center;
+}
+
+.title {
+    text-transform: capitalize;
+    font-size: 3rem;
+    position: relative;
+}
+
+.title::after {
+    content: '';
+    width: 100px;
+    height: 6px;
+    background-color: #48C9B0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card {
+    margin: 4rem auto;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 695px;
+}
+
+.img-container {
+    position: relative;
+}
+
+.icon-quote img {
+    width: 50px;
+    height: 50px;
+    padding: 0.7rem;
+    border-radius: 50%;
+    background-color: #48C9B0;
+    position: absolute;
+    left: 40%;
+    transform: translateX(-50%);
+}
+
+.img-author {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    box-shadow: 7px -5px 0px #48C9B0;
+}
+
+.author-container cite {
+    letter-spacing: 4px;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    font-style: normal;
+}
+
+.author-container p {
+    text-transform: uppercase;
+    color: #48C9B0;
+}
+
+.quote {
+    display: inline-block;
+    margin: 1rem auto;
+    font-size: 1.2rem;
+    color: #117864;
+}
+
+.icon-container {
+    margin-bottom: 1rem;
+}
+
+.icon-container img {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-container img:hover {
+    background-color: #D1F2EB;
+    
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: thin solid #48C9B0;
+    color: #48C9B0;
+    font-weight: 600;
+    background-color: #E8F8F5;
+    text-transform: capitalize;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background-color: #48C9B0;
+    color: #E8F8F5;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.icon-container img,
+.btn {
+    cursor: pointer;
+}
